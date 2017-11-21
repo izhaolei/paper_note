@@ -12,8 +12,8 @@
 
 ###### 2.网络架构
 
-![](./figure1.png)
+![](./figure1.PNG)
 
-​	文中网络主要分为三级，第一级对生成的segment进行初步筛选，去除大量干扰的背景segment; 第二级网络为分类网络，将第一级网络筛选后的数据传入网络，获得该segment所属的类别; 第三极网络为定位网络，相对于分类网络，定位网络在loss function上加入了overlap的惩罚项(如下)。![](./formula1.png)
+​	文中网络主要分为三级，第一级对生成的segment进行初步筛选，去除大量干扰的背景segment; 第二级网络为分类网络，将第一级网络筛选后的数据传入网络，获得该segment所属的类别; 第三极网络为定位网络，相对于分类网络，定位网络在loss function上加入了overlap的惩罚项(如下)。![](./formula1.PNG)
 
-​	加入overlap惩罚项后，相比如单纯的softmax的crossentropy损失函数，能将该segment与groundtruth之间的重合度纳入考量范围，有效的避免出现高score与overlap间不匹配对后续NMS处理造成的干扰问题。加入overlap惩罚项后loss的曲线如下：![](./figure2.png)
+​	加入overlap惩罚项后，相比如单纯的softmax的crossentropy损失函数，能将该segment与groundtruth之间的重合度纳入考量范围，有效的避免出现高score与overlap间不匹配对后续NMS处理造成的干扰问题。加入overlap惩罚项后loss的曲线如下：![](./figure2.PNG)
